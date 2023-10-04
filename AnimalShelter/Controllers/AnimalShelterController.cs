@@ -1,22 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-using AnimalShelter.Solution;
+using AnimalShelter.Models;
 using System.Linq;
 
-namespace AnimalShelter.Solution.Controllers
+namespace AnimalShelter.Controllers
 {
-    public class AnimalController : Controller
+    public class AnimalShelterController : Controller
     {
-        public readonly AppContext_context:
+        public readonly AppDbContext _context;
 
-        public AnimalController(appDbContext context)
+        public AnimalShelterController(AppDbContext context)
         {
             _context = context;
         }
 
-        Public IActionResult Index()
+        [HttpGet("/")]
+        public ActionResult Index()
         {
-            var animals = _context.Animals.Orderby(a => a.DateOfAdmittance)
-            return View(animals);
+            // var animals = _context.Animals.ToList();
+            // return View(animals);
+            return View();
         }
     }
 }

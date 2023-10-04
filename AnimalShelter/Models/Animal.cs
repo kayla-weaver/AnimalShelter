@@ -1,6 +1,6 @@
 using System;
 
-namespace AnimalShelter.Solution
+namespace AnimalShelter.Models
 {
 
     public class Animal 
@@ -10,7 +10,7 @@ namespace AnimalShelter.Solution
         public DateTime DateOfAdmittance {get; set; }
         public string Breed { get; set; }
 
-        public in TypeId {get; set; }
-        public Type Type {get; set; }
+        public int TypeId { get; set; }
+        public Type Type { get; set; }
     }
 }
